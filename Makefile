@@ -13,6 +13,9 @@ docker-pull:
 docker-build:
 	docker-compose build
 
+manager-test:
+	docker-compose run --rm manager-php-cli php bin/phpunit
+
 manager-init: manager-composer-install manager-wait-db manager-migrations
 
 manager-composer-install:
